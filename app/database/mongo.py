@@ -20,12 +20,20 @@ class MongoDB:
         return MongoDB.db[collection].find_one(query, params)
 
     @staticmethod
+    def find_all(collection):
+        return MongoDB.db[collection].find()
+
+    @staticmethod
     def update(collection, query, update):
         return MongoDB.db[collection].update_one(query, update, upsert=True)
 
     @staticmethod
     def delete(collection, query):
         return MongoDB.db[collection].delete_one(query)
+
+    @staticmethod
+    def get_collection():
+        return MongoDB.db.list_collection_names()
 
 
 db = MongoDB

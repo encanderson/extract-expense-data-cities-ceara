@@ -1,5 +1,5 @@
-from app.data.extract_and_save_data import ExtractData
+from app.main import main
+
 
 if __name__ == '__main__':
-    data = ExtractData(3)
-    data.start()
+    main()
